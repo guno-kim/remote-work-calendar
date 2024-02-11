@@ -99,6 +99,8 @@ function App() {
         <button onClick={() => {
           localStorage.removeItem('checkDays');
           localStorage.removeItem('vacationDays');
+          setCheckDays([]);
+          setVacationDays([]);
         }}>Clear</button>
 
       </div>
