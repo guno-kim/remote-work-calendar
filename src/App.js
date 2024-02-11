@@ -87,12 +87,22 @@ function App() {
 
   return (
     <div className="App">
-      <h2>
-        {`${month}월 `}
-        {checkDays.length}
-        /
-        {getWeekdaysInMonth() - vacationDays.length}
-      </h2>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <h2 style={{ paddingRight: '20px' }}>
+          {`${month}월 `}
+        </h2>
+        <h2 style={{ paddingRight: '20px' }}>
+          {checkDays.length}
+          /
+          {getWeekdaysInMonth() - vacationDays.length}
+        </h2>
+        <button onClick={() => {
+          localStorage.removeItem('checkDays');
+          localStorage.removeItem('vacationDays');
+        }}>Clear</button>
+
+      </div>
+
       <Calendar
         calendarType='US'
         formatDay={(locale, date) => moment(date).format("D")}
