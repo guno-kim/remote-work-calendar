@@ -18,11 +18,13 @@ function App() {
 
     let vacationItems = localStorage.getItem("vacationDays")?.split(',').filter(o => o);
     setVacationDays(vacationItems || []);
+
+    console.log(getWeekdaysInMonth());
   }, [])
 
   function isWeekday(year, month, day) {
-    var day = new Date(year, month, day).getDay();
-    return day != 0 && day != 6;
+    var dateDay = new Date(year, month-1, day).getDay();
+    return dateDay != 0 && dateDay != 6;
   }
 
   function getWeekdaysInMonth() {
