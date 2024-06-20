@@ -18,8 +18,6 @@ function App() {
 
     let vacationItems = localStorage.getItem("vacationDays")?.split(',').filter(o => o);
     setVacationDays(vacationItems || []);
-
-    console.log(getWeekdaysInMonth());
   }, [])
 
   function isWeekday(year, month, day) {
